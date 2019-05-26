@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>reveal.js – The HTML Presentation Framework</title>
+
+	<meta name="description" content="KISS">
+	<meta name="author" content="Dmitry Grigorjev">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>KISS</h1>
+				<img src="http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-Kiss-PNG-Transparent-Image-1-500x313.png"
+					alt="kiss" width="500px" height="300px" style="border: none; box-shadow: none; background: inherit">
+			</section>
+
+			<section>
+				<h2>Some history</h2>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Edsger_Wybe_Dijkstra.jpg/330px-Edsger_Wybe_Dijkstra.jpg"
+					alt="Edsger Wybe Dijkstra" width="300px" height="400px">
+				<h4>Edsger Wybe Dijkstra</h4>
+			</section>
+
+			<section>
+				<h2>Compact message</h2>
+				<img src="./img/31lbpu.jpg" alt="">
+			</section>
+			<section>
+				<h2>Slogans</h2>
+				<img src="https://www.free-power-point-templates.com/articles/wp-content/uploads/2012/05/coke-slogans-580x386.jpg" alt="">
+			</section>
+			<section>
+				<section>
+					<h2>Examples...</h2>
+				</section>
+				<section>
+					<h2>Sales pitches</h2>
+					<img src="https://creativiteconsultants.files.wordpress.com/2017/09/293-111-401p.jpg"
+						alt="Sales" height="400px">
+				</section>
+				<section>
+					<h4>Callback</h4>
+					<pre><code>request('http://www.somepage.com', 
+	function (firstError, firstResponse, firstBody) {
+    if(firstError){
+        // Handle error.
+    }
+    else {
+	request(`http://www.somepage.com/${firstBody.someValue}`, 
+		function (secondError, secondResponse, secondBody) {
+            if(secondError){
+                // Handle error.
+            }
+            else {
+                // Use secondBody for something
+            }
+        });
+    }
+});
+					</code></pre>
+				</section>
+				<section>
+					<h4>Promise</h4>
+					<pre><code>const axios = require(‘axios’);
+axios.get(‘http://www.somepage.com')
+.then(function (response) { 
+    return axios.get(`http://www.somepage.com/${response.someValue}`);
+})
+.then(function response { 
+    // Handle response
+})
+.catch(function (error) {
+    // Handle error.
+});
+						</code></pre>
+				</section>
+				<section>
+					<h4>Solution A</h4>
+					<img src="https://i.stack.imgur.com/hH39s.jpg" alt="">
+				</section>
+				<section>
+						<h4>Solution B</h4>
+						<img src="https://i.stack.imgur.com/SuZrR.jpg" alt="" width="500px" style="margin: 0">
+						<img src="https://i.stack.imgur.com/Q5Ck7.jpg" alt="" width="500px" height="300px" style="margin: 0">
+					</section>
+			</section>
+			
+
+			<section>
+				<h2>Simple</h2>
+				<img src="https://d13egrxi1n6w2z.cloudfront.net/47118_1534250w750.jpg" alt="">
+			</section>
+
+			<section>
+				<h2>Thank you!</h2>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true },
+				{ src: 'plugin/search/search.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+
+</html>
